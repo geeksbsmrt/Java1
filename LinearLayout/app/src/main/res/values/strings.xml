@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Linear Layout</string>
+    <string name="appDesc">Determines if you have enough for an item after tax</string>
+    <string name="cash">How much cash do you have?</string>
+    <string name="price">Item price</string>
+    <string name="tax">Tax Rate</string>
+    <string name="calc">Calculate</string>
+    <string name="canAfford">You CAN afford this item.</string>
+    <string name="expensive">You CAN afford this item, however, it is VERY expensive.  Think about the purchase.</string>
+    <string name="notAfford">You CANNOT afford this item.</string>
+
+</resources>

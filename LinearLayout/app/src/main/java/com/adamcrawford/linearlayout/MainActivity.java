@@ -66,6 +66,20 @@ public class MainActivity extends Activity {
         //set text on button
         calc.setText(R.string.calc);
         //set and create onclick method at once
+
+
+
+		calc.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				//do action here
+			}
+		});
+
+
+
         calc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

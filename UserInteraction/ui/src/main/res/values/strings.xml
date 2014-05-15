@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">User Interaction</string>
+    <string name="description">Please fill in the requested fields:</string>
+    <string name="fNameEdit">First Name</string>
+    <string name="lNameEdit">Last Name</string>
+    <string name="phEdit">Phone Number</string>
+    <string name="submitButton">Submit</string>
+    <string name="getJSON">Get Data</string><string name="test1">Test1</string>
+
+</resources>

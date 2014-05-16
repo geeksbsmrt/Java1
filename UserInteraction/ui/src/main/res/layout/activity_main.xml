@@ -11,4 +11,31 @@
     <!-- Design for Spinner selection of members in Guild, Guild list created in List View,
     Selection will populate InfoView -->
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/action"
+        android:id="@+id/action"
+        android:layout_alignBottom="@+id/guildSpinner"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guildSpinner"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/action"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/charList"
+        android:layout_below="@+id/action"
+        android:layout_centerHorizontal="true"
+        android:footerDividersEnabled="false"
+        android:visibility="invisible"/>
+
 </RelativeLayout>

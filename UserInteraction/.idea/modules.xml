@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UserInteraction.iml" filepath="$PROJECT_DIR$/UserInteraction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UserInteraction.iml" filepath="$PROJECT_DIR$/UserInteraction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ui/ui.iml" filepath="$PROJECT_DIR$/ui/ui.iml" />
       <module fileurl="file://$PROJECT_DIR$/ui/ui.iml" filepath="$PROJECT_DIR$/ui/ui.iml" />
     </modules>
   </component>

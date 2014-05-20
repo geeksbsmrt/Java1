@@ -11,25 +11,33 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+
+import org.json.JSONObject;
+
+import datahandler.NetSync;
 
 
 public class MainActivity extends Activity {
 
-private static final String TAG = "MainActivity";
+private static String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-	    Log.wtf(TAG, "test msg");
-
 	    Boolean isConnected = getStatus(this);
 
 	    if (isConnected) {
+
+            //TODO DO NOT FORGET TO String Replace SPACES WITH %%20
+
 		    Log.i(TAG, "You are connected");
+            AsyncTask<String, Void, JSONObject> data = new NetSync().execute("winterhoof", "veterans%%20of%%20the%%20asylum");
+            //Log.i(TAG, "check me");
 	    } else {
 		    Log.i(TAG, "You are not connected");
 	    }
@@ -38,7 +46,7 @@ private static final String TAG = "MainActivity";
 
 	public Boolean getStatus(Context c)
 	{
-
+        Log.i(TAG, "In getStatus");
 		ConnectivityManager conMan = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo netInfo = conMan.getActiveNetworkInfo();
 

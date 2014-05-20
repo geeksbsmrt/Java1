@@ -7,8 +7,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/dm" />
+            <option value="C:\Users\Adam\AndroidStudioProjects\Java1\DataManagement" />
+            <option value="C:\Users\Adam\AndroidStudioProjects\Java1\DataManagement\dm" />
           </set>
         </option>
       </GradleProjectSettings>

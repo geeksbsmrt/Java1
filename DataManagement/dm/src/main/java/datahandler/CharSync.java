@@ -10,20 +10,18 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 
 /**
  * Created by Adam Crawford on May 19, 2014.
  * Full Sail University Online MDVBS
  * Java 1 Week 3 - Data Management
  */
-public class NetSync extends AsyncTask<String, Void, JSONObject> {
+public class CharSync extends AsyncTask<String, Void, JSONObject> {
 
-    private static final String TAG = "NetSync";
+    private static final String TAG = "CharSync";
 
-    public NetSync () {
+    public CharSync() {
     }
 
     @Override
@@ -34,11 +32,12 @@ public class NetSync extends AsyncTask<String, Void, JSONObject> {
         InputStream bin = null;
 
         try {
-            //String loc = String.format("https://us.battle.net/api/wow/guild/%s/%s?fields=members", server, guild);
-            String loc = "https://us.battle.net/api/wow/guild/winterhoof/veterans%20of%20the%20asylum?fields=members";
+	        String loc = "https://us.battle.net/api/wow/guild/" + strings[0] + "/" + strings[1] + "?fields=members";
+            //String loc = String.format("https://us.battle.net/api/wow/guild/%s/%s?fields=members", strings[0], strings[1]);
+            //String loc = "https://us.battle.net/api/wow/guild/winterhoof/veterans%20of%20the%20asylum?fields=members";
             url = new URL(loc);
 
-            Log.d(TAG, "host = " + url.getHost());
+            //Log.d(TAG, "host = " + url.getHost());
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             bin = new BufferedInputStream(conn.getInputStream());
@@ -53,8 +52,8 @@ public class NetSync extends AsyncTask<String, Void, JSONObject> {
                 contentBuffer.append(content);
             }
         } catch (IOException e) {
-            Log.wtf(TAG, "IOException");
-            e.printStackTrace();
+            Log.e(TAG, "Guild not found");
+            //e.printStackTrace();
         } finally {
             if (bin != null) {
                 try {
@@ -73,7 +72,7 @@ public class NetSync extends AsyncTask<String, Void, JSONObject> {
             myJson = new JSONObject(String.valueOf(contentBuffer));
         } catch (JSONException e) {
             Log.wtf(TAG, "JSON Error");
-            e.printStackTrace();
+            //e.printStackTrace();
         }
 
         return myJson;
@@ -82,7 +81,8 @@ public class NetSync extends AsyncTask<String, Void, JSONObject> {
 
     @Override
     protected void onPostExecute(JSONObject thisJson){
-        System.out.println(thisJson.toString());
+	    //MainActivity.toons = thisJson;
+        //System.out.println(thisJson.toString());
     }
 
 }

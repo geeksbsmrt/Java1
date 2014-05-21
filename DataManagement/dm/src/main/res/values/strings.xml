@@ -2,5 +2,9 @@
 <resources>
 
     <string name="app_name">Data Management</string>
+    <string name="realmSelect">Realm: </string>
+    <string name="guildName">Guild: </string>
+    <string name="submitButton">Get Characters</string>
+    <string name="notFound">Guild not found on selected server.</string>
 
 </resources>

@@ -32,31 +32,41 @@ public class CharSync extends AsyncTask<String, Void, JSONObject> {
         InputStream bin = null;
 
         try {
+	        //build URL from user inputs
 	        String loc = "https://us.battle.net/api/wow/guild/" + strings[0] + "/" + strings[1] + "?fields=members";
-            //String loc = String.format("https://us.battle.net/api/wow/guild/%s/%s?fields=members", strings[0], strings[1]);
-            //String loc = "https://us.battle.net/api/wow/guild/winterhoof/veterans%20of%20the%20asylum?fields=members";
             url = new URL(loc);
 
-            //Log.d(TAG, "host = " + url.getHost());
-
+	        //create connection
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            bin = new BufferedInputStream(conn.getInputStream());
+	        //System.out.println(conn.getResponseMessage());
+	        //if valid response handle data
+	        if (conn.getResponseMessage().equals("OK")) {
 
-            byte[] connBytes = new byte[1024];
-            int byteRead;
-            String content;
-            contentBuffer = new StringBuffer();
+		        //create buffer stream
+		        bin = new BufferedInputStream(conn.getInputStream());
+				//set byte size for buffer stream
+		        byte[] connBytes = new byte[1024];
+		        //bytes read by input stream
+		        int byteRead;
+		        //string to put data into
+		        String content;
+		        //stringbuffer
+		        contentBuffer = new StringBuffer();
 
-            while ((byteRead = bin.read(connBytes)) != -1) {
-                content = new String(connBytes, 0, byteRead);
-                contentBuffer.append(content);
-            }
+		        //while data is incoming from the HTTPRequest append data to the string buffer
+		        //BIS returns -1 when end of content reached
+		        while ((byteRead = bin.read(connBytes)) != - 1) {
+			        content = new String(connBytes, 0, byteRead);
+			        contentBuffer.append(content);
+		        }
+	        }
         } catch (IOException e) {
             Log.e(TAG, "Guild not found");
-            //e.printStackTrace();
+            e.printStackTrace();
         } finally {
             if (bin != null) {
                 try {
+	                //close inputstream
                     bin.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -64,25 +74,20 @@ public class CharSync extends AsyncTask<String, Void, JSONObject> {
             }
         }
 
-
         //System.out.println(contentBuffer);
-        JSONObject myJson = null;
+	    JSONObject myJson = null;
 
-        try {
-            myJson = new JSONObject(String.valueOf(contentBuffer));
-        } catch (JSONException e) {
-            Log.wtf(TAG, "JSON Error");
-            //e.printStackTrace();
-        }
+		    try {
+			    //create JSON from StringBuffer
+			    if (contentBuffer != null) {
+				    myJson = new JSONObject(String.valueOf(contentBuffer));
+			    }
+		    } catch (JSONException e) {
+			    Log.e(TAG, "JSON Error");
+			    e.printStackTrace();
+		    }
 
-        return myJson;
-
-    }
-
-    @Override
-    protected void onPostExecute(JSONObject thisJson){
-	    //MainActivity.toons = thisJson;
-        //System.out.println(thisJson.toString());
+	    return myJson;
     }
 
 }

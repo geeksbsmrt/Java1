@@ -22,15 +22,15 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.adamcrawford.datamanagement.dm.datahandler.CharSync;
+import com.adamcrawford.datamanagement.dm.datahandler.RealmSync;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
-
-import datahandler.CharSync;
-import datahandler.RealmSync;
 
 
 public class MainActivity extends Activity {

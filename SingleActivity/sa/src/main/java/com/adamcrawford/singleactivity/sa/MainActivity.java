@@ -22,8 +22,8 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.adamcrawford.singleactivity.sa.datahandler.CharSync;
-import com.adamcrawford.singleactivity.sa.datahandler.RealmSync;
+import com.adamcrawford.datahandler.CharSync;
+import com.adamcrawford.datahandler.RealmSync;
 
 import org.json.JSONArray;
 import org.json.JSONException;

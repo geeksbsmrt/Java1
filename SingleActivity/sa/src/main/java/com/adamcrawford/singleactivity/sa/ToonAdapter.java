@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.adamcrawford.singleactivity.sa.datahandler.ImgSync;
+import com.adamcrawford.datahandler.ImgSync;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SingleActivity.iml" filepath="$PROJECT_DIR$/SingleActivity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SingleActiviy.iml" filepath="$PROJECT_DIR$/SingleActiviy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sa/sa.iml" filepath="$PROJECT_DIR$/sa/sa.iml" />
+    </modules>
+  </component>
+</project>
+
